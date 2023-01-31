@@ -16,3 +16,22 @@ New-LocalUser $user3 -Password $clave -FullName "L.PuertaLogica" -Description "U
 Add-LocalGroupMember -Group "grupo1" -Member user01
 Add-LocalGroupMember -Group "grupo2" -Member user02
 Add-LocalGroupMember -Group "grupo3" -Member user03
+
+
+
+mkdir -p C:\user02home\{dir01\{dir03},dir02}
+
+write "" > C:\user02home\dir01\fich01
+
+write "" > C:\user02home\fich02
+
+
+icacls "C:\user02home\dir01" /grant user2:(OI)(CI)F /T
+
+
+icacls "C:\user02home\dir01\fich01" /grant user3:(OI)(CI)F /T
+
+
+icacls "C:\user02home\fich02" /grant user1:(OI)(CI)F /T
+
+icacls "C:\user02home\dir02" /grant user1:(OI)(CI)F /T
